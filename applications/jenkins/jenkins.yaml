@@ -1,0 +1,42 @@
+spec_version: 1
+kind: application
+
+inputs:
+  - AWS_INSTANCE_TYPE
+  - CS_COLONY_URL
+  - CS_COLONY_TOKEN
+  - SPACE_NAME
+
+source:
+  os_type: linux
+  image:
+    ami:                                                   # AWS Image
+      # - id: ami-0dd9a8dfffbb0a4ab                         # Custom AMI from Quali AWS account
+      #   region: us-west-1
+      #   username: ec2-user
+      - id: ami-0b33356b362c56df5
+        region: us-west-1
+        username: ubuntu
+
+infrastructure:
+  compute:
+    spec:
+      aws:
+        instance_type: $AWS_INSTANCE_TYPE
+
+  connectivity:
+    external:
+      - port_info:
+          port: 8080
+
+configuration:
+  initialization:
+    script: init.sh
+  start:
+    script: start.sh
+  healthcheck:
+    wait_for_ports: ALL
+    timeout: 360
+
+debugging:
+  connection_protocol: SSH

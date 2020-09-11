@@ -1,0 +1,36 @@
+spec_version: 1
+kind: blueprint
+
+metadata:
+  description: Blueprint that deploys Jenkins in AWS
+
+clouds:
+  - AWS 2: us-west-1
+
+inputs:
+  - AWS_INSTANCE_TYPE:
+      default_value: m5.large
+  - CS_COLONY_URL:
+      description: >
+        Colony URL address. Example: demo.cloudshellcolony.com
+      default_value: https://cloudshellcolony.com
+      
+  - CS_COLONY_TOKEN:
+      display_style: masked
+      description: >
+        Open the Settings page and click the Integrations tab. Under the Jenkins
+        Pipeline icon, click Connect. In the Connect Colony to your Jenkins Pipeline.
+        Copy the automatically generated token.
+  - SPACE_NAME:
+      default_value: CI Demo
+
+applications:
+  - jenkins:
+      input_values:
+        - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
+        - CS_COLONY_URL: $CS_COLONY_URL
+        - CS_COLONY_TOKEN: $CS_COLONY_TOKEN
+        - SPACE_NAME: $SPACE_NAME
+
+debugging:
+  availability: on
