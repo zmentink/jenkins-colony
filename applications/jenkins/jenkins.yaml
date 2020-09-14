@@ -3,7 +3,6 @@ kind: application
 
 inputs:
   - AWS_INSTANCE_TYPE
-  - CS_COLONY_URL
   - CS_COLONY_TOKEN
   - SPACE_NAME
   - JENKINS_ADMIN_PASS

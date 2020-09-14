@@ -8,6 +8,8 @@ set -o errexit
 set -o nounset
 
 echo "==> Starting deployment"
+
+
 # Docker
 apt update
 apt --yes --no-install-recommends install apt-transport-https ca-certificates git
@@ -20,11 +22,13 @@ systemctl enable docker
 sleep 5
 echo "==> docker installed successfully"
 
+
 # Docker Compose
 wget --output-document=/usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VER}/run.sh
 chmod +x /usr/local/bin/docker-compose
 wget --output-document=/etc/bash_completion.d/docker-compose "https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose"
 echo "==> compose installed successfully"
+
 
 # Jenkins
 echo "==> Cloning jenkins installation repo"
@@ -37,7 +41,6 @@ echo "==> Preparing a job"
 sed -i "s/%SPACE%/${SPACE_NAME}/g" ${WORKDIR}/master/config.xml
 
 echo "==> Preparing a CasC config"
-sed -i "s|%URL%|${CS_COLONY_URL}|g" ${WORKDIR}/master/jenkins.yaml
 sed -i "s|%TOKEN%|${CS_COLONY_TOKEN}|g" ${WORKDIR}/master/jenkins.yaml
 
 echo "==> Downloading a plugin file"
