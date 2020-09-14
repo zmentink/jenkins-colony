@@ -30,6 +30,9 @@ echo "==> compose installed successfully"
 echo "==> Cloning jenkins installation repo"
 git clone ${DOCKERFILE_REPO} ${WORKDIR}
 
+echo "==> Setting admin password"
+sed -i "s/%PASSWORD%/${JENKINS_ADMIN_PASS}/g" ${WORKDIR}/master/Dockerfile
+
 echo "==> Preparing a job"
 sed -i "s/%SPACE%/${SPACE_NAME}/g" ${WORKDIR}/master/config.xml
 

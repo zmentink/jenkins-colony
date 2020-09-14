@@ -6,14 +6,12 @@ inputs:
   - CS_COLONY_URL
   - CS_COLONY_TOKEN
   - SPACE_NAME
+  - JENKINS_ADMIN_PASS
 
 source:
   os_type: linux
   image:
     ami:                                                   # AWS Image
-      # - id: ami-0dd9a8dfffbb0a4ab                         # Custom AMI from Quali AWS account
-      #   region: us-west-1
-      #   username: ec2-user
       - id: ami-0b33356b362c56df5
         region: us-west-1
         username: ubuntu

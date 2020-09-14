@@ -24,6 +24,12 @@ inputs:
   - SPACE_NAME:
       default_value: CI Demo
 
+  - JENKINS_ADMIN_PASS:
+      display_style: masked
+      description: >
+        Specify password for Jenkins admin user. Default value is 'admin'
+      default_value: admin
+
 applications:
   - jenkins:
       input_values:
@@ -31,6 +37,7 @@ applications:
         - CS_COLONY_URL: $CS_COLONY_URL
         - CS_COLONY_TOKEN: $CS_COLONY_TOKEN
         - SPACE_NAME: $SPACE_NAME
+        - JENKINS_ADMIN_PASS: $JENKINS_ADMIN_PASS
 
 debugging:
   availability: on
