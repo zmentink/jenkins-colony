@@ -7,13 +7,14 @@ inputs:
   - AWS_REGION: us-west-1
 
 module:
-  source: https://github.com/QualiSystemsLab/jenkins-colony/terraform/jenkins-ec2-profile
+  source: github.com/QualiSystemsLab/jenkins-colony/terraform/jenkins-ec2-profile
 
-terraform_version: 0.13.0
+terraform_version: 0.12.0
 
 variables:  
   values:                                 
     - SANDBOX_ID: $SANDBOX_ID
+    - AWS_REGION: $AWS_REGION
 
 outputs:
   - bucket_name
