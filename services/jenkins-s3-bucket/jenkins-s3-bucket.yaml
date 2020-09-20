@@ -4,7 +4,7 @@ kind: TerraForm
 inputs:
   - SANDBOX_ID
   - ROLE_ARN: PowerUserAccess
-  - AWS_REGION: us-east-1
+  - AWS_REGION: us-west-1
 
 module:
   source: https://github.com/QualiSystemsLab/jenkins-colony/terraform/jenkins-ec2-profile
