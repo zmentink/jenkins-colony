@@ -34,5 +34,10 @@ applications:
         - SPACE_NAME: $SPACE_NAME
         - JENKINS_ADMIN_PASS: $JENKINS_ADMIN_PASS
 
+services:
+  - jenkins-s3-bucket:
+      input_values:
+        - SANDBOX_ID: ${SandboxID}
+
 debugging:
   availability: on

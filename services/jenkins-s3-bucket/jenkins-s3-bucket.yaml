@@ -1,0 +1,24 @@
+spec_version: 1
+kind: TerraForm
+
+inputs:
+  - SANDBOX_ID
+  - ROLE_ARN: PowerUserAccess
+  - AWS_REGION: us-east-1
+
+module:
+  source: https://github.com/QualiSystemsLab/jenkins-colony/terraform/jenkins-ec2-profile
+
+terraform_version: 0.13.0
+
+variables:  
+  values:                                 
+    - SANDBOX_ID: $SANDBOX_ID
+
+outputs:
+  - bucket_name
+  - jenkins_profile
+
+permissions:                              
+  aws:
+    role_arn: $ROLE_ARN
