@@ -9,7 +9,7 @@ inputs:
 module:
   source: github.com/QualiSystemsLab/jenkins-colony/terraform/jenkins-ec2-profile
 
-terraform_version: 0.13.03
+terraform_version: 0.13.3
 
 variables:  
   values:                                 
