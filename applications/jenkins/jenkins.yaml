@@ -6,7 +6,7 @@ inputs:
   - CS_COLONY_TOKEN
   - SPACE_NAME
   - JENKINS_ADMIN_PASS
-  - EC2_PROFILE_NAME
+  # - EC2_PROFILE_NAME
 
 source:
   os_type: linux
@@ -39,9 +39,9 @@ configuration:
     wait_for_ports: ALL
     timeout: 360
 
-permissions:
-    aws:
-      iam_instance_profile: $EC2_PROFILE_NAME
+# permissions:
+    # aws:
+      # iam_instance_profile: $EC2_PROFILE_NAME
 
 debugging:
   connection_protocol: SSH

@@ -28,14 +28,14 @@ inputs:
 
 applications:
   - jenkins:
-      depends_on: 
-        - jenkins-s3-bucket
+      # depends_on: 
+      #   - jenkins-s3-bucket
       input_values:
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
         - CS_COLONY_TOKEN: $CS_COLONY_TOKEN
         - SPACE_NAME: $SPACE_NAME
         - JENKINS_ADMIN_PASS: $JENKINS_ADMIN_PASS
-        - EC2_PROFILE_NAME: $outputs.jenkins-s3-bucket.jenkins_profile
+        # - EC2_PROFILE_NAME: $outputs.jenkins-s3-bucket.jenkins_profile
 
 services:
   - jenkins-s3-bucket:
