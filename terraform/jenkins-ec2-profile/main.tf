@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "colony_bucket" {
   # bucket = "colony-bucket-${var.SANDBOX_ID}"
-  bucket = "${BUCKET_NAME}"
+  bucket = "${var.BUCKET_NAME}"
   acl    = "private"
   versioning {
     enabled = true
