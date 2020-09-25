@@ -5,7 +5,7 @@ inputs:
   # - SANDBOX_ID
   - BUCKET_NAME
   - ROLE_ARN: PowerUserAccess 
-  - AWS_REGION: us-east-1
+  - AWS_REGION: us-west-1
 
 module:
   source: github.com/QualiSystemsLab/jenkins-colony/terraform/jenkins-ec2-profile
