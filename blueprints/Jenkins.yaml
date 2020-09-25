@@ -26,21 +26,32 @@ inputs:
         Specify password for Jenkins admin user. Default value is 'admin'
       default_value: admin
 
+  - EC2_PROFILE_NAME:
+      description: >
+        AWS role allowing Jenkins to access S3 bucket
+
+  - BUCKET_NAME:
+      description: >
+        This bucket will be used to store build artifacts
+
 applications:
   - jenkins:
-      # depends_on: 
-      #   - jenkins-s3-bucket
+      depends_on: 
+        - jenkins-s3-bucket
       input_values:
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
         - CS_COLONY_TOKEN: $CS_COLONY_TOKEN
         - SPACE_NAME: $SPACE_NAME
         - JENKINS_ADMIN_PASS: $JENKINS_ADMIN_PASS
         # - EC2_PROFILE_NAME: $outputs.jenkins-s3-bucket.jenkins_profile
+        - EC2_PROFILE_NAME: $EC2_PROFILE_NAME
+        - BUCKET_NAME: $BUCKET_NAME
 
 services:
   - jenkins-s3-bucket:
       input_values:
-        - SANDBOX_ID: ${SandboxID}
+        # - SANDBOX_ID: ${SandboxID}
+        - BUCKET_NAME: $BUCKET_NAME
 
 debugging:
   availability: on

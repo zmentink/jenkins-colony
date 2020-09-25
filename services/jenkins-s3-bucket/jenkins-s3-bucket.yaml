@@ -2,8 +2,9 @@ spec_version: 1
 kind: TerraForm
 
 inputs:
-  - SANDBOX_ID
-  - ROLE_ARN: PowerUserAccess
+  # - SANDBOX_ID
+  - BUCKET_NAME
+  - ROLE_ARN: PowerUserAccess 
   - AWS_REGION: us-east-1
 
 module:
@@ -13,12 +14,13 @@ terraform_version: 0.13.3
 
 variables:  
   values:                                 
-    - SANDBOX_ID: $SANDBOX_ID
+    # - SANDBOX_ID: $SANDBOX_ID
+    - BUCKET_NAME: $BUCKET_NAME
     - AWS_REGION: $AWS_REGION
 
-outputs:
-  - bucket_name
-  - jenkins_profile
+# outputs:
+#   - bucket_name
+#   - jenkins_profile
 
 permissions:                              
   aws:
