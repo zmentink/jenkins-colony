@@ -30,6 +30,10 @@ infrastructure:
     external:
       - port_info:
           port: 8080
+          
+  permissions:
+      aws:
+        iam_instance_profile: $EC2_PROFILE_NAME
 
 configuration:
   initialization:
@@ -39,10 +43,6 @@ configuration:
   healthcheck:
     wait_for_ports: ALL
     timeout: 360
-
-  permissions:
-      aws:
-        iam_instance_profile: $EC2_PROFILE_NAME
 
 debugging:
   connection_protocol: SSH
