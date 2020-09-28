@@ -39,6 +39,7 @@ sed -i "s/%PASSWORD%/${JENKINS_ADMIN_PASS}/g" ${WORKDIR}/master/Dockerfile
 
 echo "==> Preparing a job"
 sed -i "s/%SPACE%/${SPACE_NAME}/g" ${WORKDIR}/master/config.xml
+sed -i "s/%BUCKET_NAME%/${BUCKET_NAME}/g" ${WORKDIR}/master/config.xml
 
 echo "==> Preparing a CasC config"
 sed -i "s|%TOKEN%|${CS_COLONY_TOKEN}|g" ${WORKDIR}/master/jenkins.yaml
