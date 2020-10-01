@@ -8,8 +8,8 @@ clouds:
   - AWS 2: us-east-1
   
 artifacts:
-  - promotions-manager-ui: productions-manager/latest/promotions-manager-ui.tar.gz
-  - promotions-manager-api: productions-manager/latest/promotions-manager-api.tar.gz
+  - promotions-manager-ui: promotions-manager/latest/promotions-manager-ui.master.tar.gz
+  - promotions-manager-api: promotions-manager/latest/promotions-manager-api.master.tar.gz
   - mongodb: promotions-manager/latest/test-db.tar.gz
 
 inputs:
