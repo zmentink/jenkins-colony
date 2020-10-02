@@ -43,14 +43,7 @@ applications:
         - CS_COLONY_TOKEN: $CS_COLONY_TOKEN
         - SPACE_NAME: $SPACE_NAME
         - JENKINS_ADMIN_PASS: $JENKINS_ADMIN_PASS
-        # - EC2_PROFILE_NAME: $outputs.jenkins-s3-bucket.jenkins_profile
         - EC2_PROFILE_NAME: $EC2_PROFILE_NAME
-        - BUCKET_NAME: $BUCKET_NAME
-
-services:
-  - jenkins-s3-bucket:
-      input_values:
-        # - SANDBOX_ID: ${SandboxID}
         - BUCKET_NAME: $BUCKET_NAME
 
 debugging:
