@@ -11,7 +11,7 @@ inputs:
   - AWS_INSTANCE_TYPE:
       default_value: m5.large
       
-  - CS_COLONY_TOKEN:
+  - COLONY_TOKEN:
       display_style: masked
       description: >
         Open the Settings page and click the Integrations tab. Under the Jenkins
@@ -26,9 +26,9 @@ inputs:
         Specify password for Jenkins admin user. Default value is 'admin'
       default_value: admin
 
-  - EC2_PROFILE_NAME:
+  - IAM_ROLE:
       description: >
-        AWS role allowing Jenkins to access S3 bucket
+        AWS IAM instance profile role name allowing Jenkins to access S3 bucket
 
   - BUCKET_NAME:
       description: >
@@ -38,10 +38,10 @@ applications:
   - jenkins:
       input_values:
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
-        - CS_COLONY_TOKEN: $CS_COLONY_TOKEN
+        - CS_COLONY_TOKEN: $COLONY_TOKEN
         - SPACE_NAME: $SPACE_NAME
         - JENKINS_ADMIN_PASS: $JENKINS_ADMIN_PASS
-        - EC2_PROFILE_NAME: $EC2_PROFILE_NAME
+        - IAM_ROLE: $IAM_ROLE
         - BUCKET_NAME: $BUCKET_NAME
 
 debugging:

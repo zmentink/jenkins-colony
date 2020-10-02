@@ -6,7 +6,7 @@ inputs:
   - CS_COLONY_TOKEN
   - SPACE_NAME
   - JENKINS_ADMIN_PASS
-  - EC2_PROFILE_NAME
+  - IAM_ROLE
   - BUCKET_NAME
 
 source:
@@ -33,7 +33,7 @@ infrastructure:
           
   permissions:
       aws:
-        iam_instance_profile: $EC2_PROFILE_NAME
+        iam_instance_profile: $IAM_ROLE
 
 configuration:
   initialization:
