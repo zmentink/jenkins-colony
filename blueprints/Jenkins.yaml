@@ -11,7 +11,7 @@ inputs:
   - AWS_INSTANCE_TYPE:
       default_value: m5.large
       
-  - COLONY_TOKEN:
+  - CS_COLONY_TOKEN:
       display_style: masked
       description: >
         Open the Settings page and click the Integrations tab. Under the Jenkins
@@ -38,7 +38,7 @@ applications:
   - jenkins:
       input_values:
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
-        - CS_COLONY_TOKEN: $COLONY_TOKEN
+        - CS_COLONY_TOKEN: $CS_COLONY_TOKEN
         - SPACE_NAME: $SPACE_NAME
         - JENKINS_ADMIN_PASS: $JENKINS_ADMIN_PASS
         - IAM_ROLE: $IAM_ROLE
