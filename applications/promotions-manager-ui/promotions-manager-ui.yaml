@@ -35,6 +35,9 @@ source:
       - id: ami-0565af6e282977273
         region: us-east-1
         username: ubuntu
+      - id: ami-0ff7f191316dba328
+        region: us-west-1
+        username: ubuntu
   os_type: linux
 
   debugging: 
