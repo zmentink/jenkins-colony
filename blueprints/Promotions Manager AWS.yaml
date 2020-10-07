@@ -26,7 +26,8 @@ applications:
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
         - API_PORT: $API_PORT
     
-  - promotions-manager-api:      
+  - promotions-manager-api:
+      instances: 2
       input_values:
         - API_PORT: $API_PORT
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
