@@ -2,7 +2,7 @@
 DOCKERFILE_REPO="https://github.com/QualiSystemsLab/colony-jenkins-dockerized.git"
 DOCKER_COMPOSE_VER="1.26.2"
 WORKDIR="/tmp/jenkins"
-COLONY_PLUGIN_URL="https://docs.google.com/uc?export=download&id=1fuLqNHF8aheTw1cCM2EZlpV2-F_zcXvK"  # TODO: replace with correct link to plugin binary
+COLONY_PLUGIN_URL="https://github.com/cloudshell-colony/jenkins-plugin/releases/latest/download/colony.hpi"
 
 set -o errexit
 set -o nounset
