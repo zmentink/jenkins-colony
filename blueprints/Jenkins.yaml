@@ -18,7 +18,6 @@ inputs:
         Pipeline icon, click Connect. In the Connect Colony to your Jenkins Pipeline.
         Copy the automatically generated token.
   - SPACE_NAME:
-      default_value: CI Demo
 
   - JENKINS_ADMIN_PASS:
       display_style: masked
