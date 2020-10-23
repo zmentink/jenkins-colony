@@ -1,6 +1,9 @@
 # CloudShell Colony blueprint repository for Jenkins deployment
 
-This blueprint repository allows you to easily deploy Jenkins and connect it to your Cloudshell Colony account
+This blueprint repository allows you to easily deploy Jenkins and connect it to your Cloudshell Colony account.
+After deployment this Jenkins instance could be immediately used to launch your pipelines against environments
+provided by Colony. It comes with a sample 'demo' pipeline, so that you will have an entrypoint from where
+you can start modeling your CI/CD flows using Jenkins and Colony  
 
 ### Repo consists of two blueprints:
 
@@ -63,3 +66,24 @@ Jenkins Blueprint has the following list of input parameters:
 *BUCKET_NAME* - name of S3 bucket connected to the space you created for artifacts
 
 ![params](https://user-images.githubusercontent.com/8643801/95510076-0ce98980-09be-11eb-8d89-a4d588674da8.PNG)
+
+### Demo pipeline
+
+After sandbox deployment you can log into Jenkins by using quick link:
+
+![quick_link](https://user-images.githubusercontent.com/8643801/96999652-2f42e180-153e-11eb-8bdc-4eada85136eb.png)
+
+In Jenkins you will see a pre-defined pipeline which is configured to run a Promotions manager blueprint in your Colony space
+
+![jenkins](https://user-images.githubusercontent.com/8643801/96999412-c8bdc380-153d-11eb-96e0-3bd4be4e6816.png)
+
+#### Pipeline steps
+
+The default pipeline loaded with this Jenkins instance will automatically run the following steps:​
+
+1. Retrieve latest code of the promotion app from Git​
+2. Build artifact package (latest build)​
+3. Upload Build to S3 repository​
+4. Deploy the promotions manager application to AWS in a Colony Sandbox​
+5. Run tests​
+6. Terminate the promotions manager application  
