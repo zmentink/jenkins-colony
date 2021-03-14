@@ -5,7 +5,7 @@ metadata:
     AWS deployment of the promotions manager app
     
 clouds: 
-  - AWS: us-west-1
+  - AWS 2: us-west-1
   
 artifacts:
   - promotions-manager-ui: promotions-manager/latest/promotions-manager-ui.master.tar.gz
